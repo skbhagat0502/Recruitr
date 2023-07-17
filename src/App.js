@@ -1,24 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
-
+import "./App.css";
+import Navbar from "./components/Navbar";
+import Work from "./pages/Work";
+import VideoResumePage from "./pages/VideoResumePage";
+import QualificationPage from "./pages/QualificationPage";
+import UpdateStatusPage from "./pages/UpdateStatusPage";
+import HighlightsPage from "./pages/HighlightsPage";
+import RecommendationPage from "./pages/RecommendationPage";
+import { Route, Routes } from "react-router-dom";
+import DownloadPage from "./pages/DownloadPage";
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<Work />} />
+        <Route path="/qualifications" element={<QualificationPage />} />
+        <Route path="/highlights" element={<HighlightsPage />} />
+        <Route path="/recommendations" element={<RecommendationPage />} />
+        <Route path="/upload-video-resume" element={<VideoResumePage />} />
+        <Route path="/update-status" element={<UpdateStatusPage />} />
+        <Route path="/download-resume" element={<DownloadPage />} />
+      </Routes>
+    </>
   );
 }
 
